@@ -5,32 +5,12 @@
     "description": "Week 3-4 Project",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-3-4.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
-  "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
+  "paths": {    
     "/employee/": {
       "get": {
         "description": "",
@@ -347,6 +327,6 @@
     }
   },
   "schema": [
-    "http"
+    "https"
   ]
 }
