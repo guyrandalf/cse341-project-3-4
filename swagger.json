@@ -8,29 +8,9 @@
   "host": "cse341-3-4.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
-  "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
+  "paths": {    
     "/employee/": {
       "get": {
         "description": "",
