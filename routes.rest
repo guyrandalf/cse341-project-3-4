@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Delete a User
-DELETE http://localhost:8080/user/65ba10a68e0397f5bb5b5d46 HTTP/1.1
+DELETE http://localhost:8080/user/65ba1f6245a78fb5c8049a18 HTTP/1.1
 
 // PRODUCTION FOR USER
 ### Get all Users
@@ -60,7 +60,7 @@ Content-Type: application/json
 }
 
 ### Delete a User
-DELETE https://cse341-3-4.onrender.com/user/65ba15523ad220dfe6a1f0ab HTTP/1.1
+DELETE https://cse341-3-4.onrender.com/user/65ba17233ad220dfe6a1f0ac HTTP/1.1
 
 
 // LOCALHOST FOR EMPLOYEES
@@ -99,7 +99,7 @@ Content-Type: application/json
 }
 
 ### Delete an Employee
-DELETE http://localhost:8080/employee/65ba1f4c45a78fb5c8049a17 HTTP/1.1
+DELETE http://localhost:8080/employee/65ba1fab45a78fb5c8049a19 HTTP/1.1
 
 // PRODUCTION
 ### Get all Employees
@@ -137,4 +137,4 @@ Content-Type: application/json
 }
 
 ### Delete an Employee
-DELETE https://cse341-3-4.onrender.com/employee/65ba19e43ad220dfe6a1f0b1 HTTP/1.1
+DELETE https://cse341-3-4.onrender.com/employee/65ba20bec96458154e74e9ca HTTP/1.1

@@ -6,6 +6,8 @@ const doc = {
     description: "Week 3-4 Project",
   },
   host: "cse341-3-4.onrender.com",
+  // host: "localhost:8080",
+  // schema: ["http"],
   schema: ["https"],
 };
 
