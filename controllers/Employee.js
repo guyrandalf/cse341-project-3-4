@@ -2,7 +2,11 @@ const mongodb = require("../database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = (req, res) => {
-  const result = mongodb.getDatabase().db("csewk3-4").collection("employees").find();
+  const result = mongodb
+    .getDatabase()
+    .db("csewk3-4")
+    .collection("employees")
+    .find();
   result
     .toArray()
     .then((employee) => {
@@ -106,17 +110,21 @@ const deleteEmployee = async (req, res) => {
 
   const employeeId = new ObjectId(req.params.id);
 
-  const response = await mongodb
-    .getDatabase()
-    .db("csewk3-4")
-    .collection("employees")
-    .deleteOne({ _id: employeeId });
-  if (response.deleteCount > 0) {
-    res.status(204).send();
-  } else {
-    res
-      .status(500)
-      .json(response.error || "An error occured while deleting the employee");
+  try {
+    const response = await mongodb
+      .getDatabase()
+      .db("csewk3-4")
+      .collection("employees")
+      .deleteOne({ _id: employeeId });
+
+    if (response.deleteCount > 0) {
+      return res.status(204).send();
+    } else {
+      return res.status(404).json("Employee not found");
+    }
+  } catch (error) {
+    console.error("Error deleting employee:", error);
+    return res.status(500).json("An error occured while deleting the employee");
   }
 };
 

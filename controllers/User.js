@@ -2,7 +2,11 @@ const mongodb = require("../database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = (req, res) => {
-  const result = mongodb.getDatabase().db("csewk3-4").collection("users").find();
+  const result = mongodb
+    .getDatabase()
+    .db("csewk3-4")
+    .collection("users")
+    .find();
   result
     .toArray()
     .then((user) => {
@@ -100,17 +104,21 @@ const deleteUser = async (req, res) => {
 
   const userId = new ObjectId(req.params.id);
 
-  const response = await mongodb
-    .getDatabase()
-    .db("csewk3-4")
-    .collection("users")
-    .deleteOne({ _id: userId });
-  if (response.deleteCount > 0) {
-    res.status(204).send();
-  } else {
-    res
-      .status(500)
-      .json(response.error || "An error occured while deleting the user");
+  try {
+    const response = await mongodb
+      .getDatabase()
+      .db("csewk3-4")
+      .collection("users")
+      .deleteOne({ _id: userId });
+
+    if (response.deletedCount > 0) {
+      return res.status(204).send();
+    } else {
+      return res.status(404).json("User not found");
+    }
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    return res.status(500).json("An error occurred while deleting the user");
   }
 };
 
