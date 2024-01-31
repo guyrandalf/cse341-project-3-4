@@ -117,7 +117,7 @@ const deleteEmployee = async (req, res) => {
       .collection("employees")
       .deleteOne({ _id: employeeId });
 
-    if (response.deleteCount > 0) {
+    if (response.deletedCount > 0) {
       return res.status(204).send();
     } else {
       return res.status(404).json("Employee not found");
